@@ -9,7 +9,7 @@ run `npm install`
 
 ## 3: Run project
 
-run `npm start`
+run `npm run start`
 
 ## 4: Open it
 
