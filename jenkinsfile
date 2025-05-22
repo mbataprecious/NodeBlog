@@ -31,11 +31,13 @@ pipeline {
             }
         }
         stage('Clean Up Existing Image') {
+            steps {
                 script {
                     sh '''
                      docker rm -f $(docker ps -aqf"name=$IMAGE_NAME") 2&> /dev/null 
                     '''
                 }
+            }
         }
         stage('Git checkout'){
             steps{
