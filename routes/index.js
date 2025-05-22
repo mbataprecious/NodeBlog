@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 let moment = require('moment');
 
-const db = require('monk')('mongodb://127.0.0.1:27017/Nodeblog')
+const db = require('monk')(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Nodeblog');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

@@ -1,16 +1,31 @@
 # NodeBlog
 
-this is a minmal Blog built with Nodejs using pug template engine
+A minimal blog built with Node.js and the Pug template engine.
 
+## 🚀 Run Locally
 
-## 2: Install packages
+```bash
+npm install
+npm run start
+```
 
-run `npm install`
+Visit [http://localhost:3005](http://localhost:3005)
 
-## 3: Run project
+## 🐳 Run with Docker
 
-run `npm run start`
+1. Create a `.env` file with:
 
-## 4: Open it
+```
+MONGODB_URI=your_mongo_uri
+```
 
-go to [http://localhost:3005](http://localhost:3005)
+2. Build and run:
+
+```bash
+docker build -t mynodeblog:v1.0.0 .
+docker run --env-file .env -d -p 3005:3005 mynodeblog:v1.0.0
+```
+
+## ⚙️ Jenkins
+
+Includes a Jenkinsfile using a Node.js agent on **Amazon Linux (AWS EC2)**.

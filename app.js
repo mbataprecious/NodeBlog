@@ -15,7 +15,7 @@ var indexRouter = require('./routes/index');
 var postRouter = require('./routes/post');
 let categoryRouter=require('./routes/category')
 
-const db = require('monk')('mongodb://127.0.0.1:27017/')
+const db = require('monk')(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Nodeblog');
 var app = express();
 
 // view engine setup

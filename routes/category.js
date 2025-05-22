@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let {body,validationResult}=require('express-validator')
-const db = require('monk')('mongodb://127.0.0.1:27017/Nodeblog');
+const db = require('monk')(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Nodeblog');
 const url=require('url')
 
 router.get('/add',(req,res)=>{
